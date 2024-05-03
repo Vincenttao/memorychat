@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8d834dee-5e8c-4fa7-9dcb-2149c852b7df" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/memorychat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/ai_agent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/code/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/code/ai_agent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/code/chat_services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/runs/run_20240502-184439_a1nrse/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/design.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instance/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instance/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192314_iwbvln/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192314_iwbvln/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192314_iwbvln/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192314_iwbvln/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192314_iwbvln/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192318_rqqcyh/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192318_rqqcyh/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192318_rqqcyh/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192318_rqqcyh/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-192318_rqqcyh/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195709_cy9z0c/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195709_cy9z0c/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195709_cy9z0c/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195709_cy9z0c/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195709_cy9z0c/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195906_3gadnv/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195906_3gadnv/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195906_3gadnv/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195906_3gadnv/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195906_3gadnv/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195943_cwnmas/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195943_cwnmas/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195943_cwnmas/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195943_cwnmas/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-195943_cwnmas/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-200020_baviii/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-200020_baviii/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-200020_baviii/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-200020_baviii/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-200020_baviii/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201226_mbrh3f/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201226_mbrh3f/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201226_mbrh3f/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201226_mbrh3f/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201226_mbrh3f/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201233_29p5jc/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201233_29p5jc/agentscope.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201233_29p5jc/code/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201233_29p5jc/logging.chat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/run_20240503-201233_29p5jc/logging.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PerforceDirect.Settings">
+    <option name="CHARSET" value="无" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2frIItCmLuqfaOcvVnUQVbFDxhw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.__init__.executor": "Run",
+    "Python.ai_agent.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/vincent/PycharmProjects/memorychat/instance",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vincent\PycharmProjects\memorychat\static" />
+      <recent name="C:\Users\vincent\PycharmProjects\memorychat\instance" />
+      <recent name="C:\Users\vincent\PycharmProjects\memorychat\app" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="8d834dee-5e8c-4fa7-9dcb-2149c852b7df" name="更改" comment="" />
+      <created>1714552695077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714552695077</updated>
+      <workItem from="1714632557234" duration="4226000" />
+      <workItem from="1714639191861" duration="28910000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/memorychat$ai_agent.coverage" NAME="ai_agent 覆盖结果" MODIFIED="1714646677782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/services" />
+    <SUITE FILE_PATH="coverage/memorychat$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1714645518402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+  </component>
+</project>

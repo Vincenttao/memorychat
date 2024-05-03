@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.story {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h1, h2 {
+    color: #1a1a1a;
+}
+
+.date {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.buttons button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+.new-story {
+    background-color: #34a853;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.new-story:hover {
+    background-color: #0b6623;
+}
+
+.story-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.story-images img,
+.story-images .upload-icon img {
+    flex: 1 1 30%; /* 每行三张图片，每张图片占行的约三分之一 */
+    height: 100px; /* 固定图片高度 */
+    object-fit: cover;
+    cursor: pointer; /* 添加指针样式表明可点击 */
+}
+
+.upload-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f2f5; /* 轻微区分背景颜色 */
+}
+
+/* 媒体查询，用于小屏幕设备 */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .buttons button {
+        width: 48%; /* 按钮占行的一半宽 */
+        padding: 8px 4px;
+        margin: 5px 1%;
+    }
+
+    .new-story {
+        padding: 15px 10px;
+    }
+
+    .story-images img {
+        flex: 1 1 30%; /* 保持九宫格布局不变 */
+    }
+}

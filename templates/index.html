@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的Story列表</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>我的Story列表</h1>
+        {% for story in stories %}
+        <div class="story">
+            <h2>{{ story.title }}</h2>
+            <div class="story-images">
+                {% for image in story.images %}
+                <img src="{{ image }}" alt="Story Image">
+                {% endfor %}
+                {% if story.images|length < 9 %}
+                <div class="upload-icon">
+                    <img src="/static/upload-icon.png" alt="Upload Icon" onclick="alert('上传功能未实现');">
+                </div>
+                {% endif %}
+            </div>
+            <p>{{ story.summary }}</p>
+            <p class="date">{{ story.date }}</p>
+            <div class="buttons">
+                <button onclick="alert('继续聊天功能未实现');">继续聊天</button>
+                <button onclick="alert('查看详情功能未实现');">查看</button>
+            </div>
+        </div>
+        {% endfor %}
+        <button class="new-story" onclick="alert('创建新Story功能未实现');">创建新Story</button>
+    </div>
+</body>
+</html>
