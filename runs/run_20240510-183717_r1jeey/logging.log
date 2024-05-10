@@ -1,0 +1,9 @@
+2024-05-10 18:37:20.245 | INFO     | agentscope.models:read_model_configs:170 - Load configs for model wrapper: qwen-max, qwen-turbo
+2024-05-10 18:37:20.255 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
+2024-05-10 18:37:20.255 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
+2024-05-10 18:37:20.256 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs\run_20240510-183717_r1jeey\agentscope.db]
+2024-05-10 18:37:32.945 | INFO     | app.services.utils:retrieve_photo_message:65 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'related_photo_id': '66361994e8eb220e315529d9'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 18, 37, 32, 945095)}))
+2024-05-10 18:37:32.948 | INFO     | app.services.utils:retrieve_photo_message:69 - 查询结果如下：[]
+2024-05-10 18:37:32.949 | INFO     | app.api.routes:get_photo_message:84 - retrieved message:[]
+2024-05-10 18:37:32.950 | INFO     | app.api.routes:get_photo_message:93 - message list:[]
+2024-05-10 18:37:32.951 | INFO     | app.api.routes:get_photo_message:94 - message json:<Response 3 bytes [200 OK]>
