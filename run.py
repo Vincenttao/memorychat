@@ -1,36 +1,79 @@
+import sys
+
 import agentscope
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request, url_for
 from mongoengine import connect
+
+from app.models.models import User, Photo
+from app.services.utils import PhotoManagement
 from instance.config import DevelopmentConfig
+from instance.config import TestingConfig
 from app.api import api_blueprint
 from instance.config import llm_model_configs
+from loguru import logger
+logger.add(sys.stdout, level="DEBUG")
 
 agentscope.init(model_configs=llm_model_configs)
 
+TEST_USER_ID = '001'
 
 app = Flask(__name__)
-app.config.from_object(DevelopmentConfig)
+app.config.from_object(TestingConfig)
 connect(host=app.config['MONGO_URI'])
 
 app.register_blueprint(api_blueprint, url_prefix='/api')
 
-stories = [
-    {'title': '这是一个关于旅行的故事', 'images': ['/static/img1.jpg', '/static/img2.jpg', '/static/img3.jpg',
-                                    '/static/img4.jpg', '/static/img5.jpg', '/static/img6.jpg',
-                                    '/static/img7.jpg', '/static/img8.jpg', '/static/img9.jpg'],
-     'summary': '这是一个关于旅行的故事', 'date': '2024-04-30'},
-    {'title': '记忆中的家庭聚会', 'images': ['/static/img7.jpg', '/static/img8.jpg'],
-     'summary': '记忆中的家庭聚会', 'date': '2024-04-25'},
-    {'title': '老朋友的重聚', 'images': ['/static/img9.jpg'],
-     'summary': '老朋友的重聚', 'date': '2024-04-20'}
-]
-
 
 @app.route('/')
-def index():
-    return render_template('index.html', stories=stories)
+@app.route('/<int:page>')
+def index(page=1):
+    photo_manager = PhotoManagement(User, Photo)
+    try:
+        photos = photo_manager.retrieve_photo_paginated(TEST_USER_ID, page=page)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        photos = []
+
+    return render_template('index.html', photos=photos, page=page)
 
 
+@app.route('/photos', methods=['GET'])
+def get_photos():
+    user_id = TEST_USER_ID
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    skip_amount = (page - 1) * per_page
+
+    photos_query = Photo.objects(user_id=user_id).order_by('-upload_date')
+    photos_count = photos_query.count()
+    photos = photos_query.skip(skip_amount).limit(per_page)
+
+    photos_data = [{
+        'id': str(photo.id),
+        'title': photo.title or "暂无主题",
+        'upload_date': photo.upload_date.strftime('%Y-%m-%d %H:%M:%S'),
+        'image_url': url_for('static', filename=photo.image_url),
+        'description': photo.description or "没有对照片的描述"
+    } for idx, photo in enumerate(photos)]
+
+    has_more = photos_count > page * per_page
+
+    return render_template('photos.html', photos=photos_data, user_id=user_id, next_page=page + 1, has_more=has_more)
+
+
+@app.route('/chat/photo/<photo_id>')
+def chat_about_photo(photo_id):
+    user_id = TEST_USER_ID
+    photo = Photo.objects(id=photo_id, user_id=user_id).first()
+
+    if not photo:
+        return "Photo not found or access denied", 404
+
+    # 从message中获取聊天记录，并显示
+    # 如果没有聊天记录，则进行初始化，开始询问用户基本信息
+    # 如果距离上次聊天超过1天，则开始新话题
+
+    return render_template('chat_about_photo.html', photo=photo)
 
 
 if __name__ == "__main__":

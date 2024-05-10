@@ -1,6 +1,7 @@
 DASHSCOPE_API_KEY = "sk-0e7eecd2eff34bf3bf501ff3fbc26913"
 
 class Config:
+    SERVER_NAME = '127.0.0.1:5000'
     MONGO_URI = "mongodb://localhost:27017/memorychatbase"
 
 
@@ -15,6 +16,7 @@ class ProductionConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     MONGO_URI = "mongodb://localhost:27017/test_mydatabase"
+    SERVER_NAME = '127.0.0.1:5000'
 
 
 llm_model_configs = [

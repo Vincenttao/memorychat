@@ -16,13 +16,15 @@ class Photo(Document):
     image_url = StringField(required=True)  # 存储图片的 URL
     upload_date = DateTimeField(default=datetime.now)
     description = StringField()
+    title = StringField()
 
 
 class Story(Document):
     user_id = ReferenceField(User, required=True)
+    title = StringField()
     created_at = DateTimeField(default=datetime.now)
-    content = StringField(required=True)
-    date = StringField()
+    summary = StringField()
+    story_date = StringField()
     related_photos = ListField(ReferenceField(Photo))
 
 
@@ -47,10 +49,12 @@ class CognitiveActivity(Document):
     date = DateTimeField(default=datetime.now)
 
 
+# 修改为按照photo.id关联
 class Message(Document):
     user_id = ReferenceField(User, required=True)
-    sender = StringField(required=True, default="user", choices=["user", "system"])  # 用户发送或系统发送
+    sender = StringField(required=True, default="user", choices=["user", "assistant"])  # 用户发送或系统发送
     message_type = StringField(required=True, default="text", choices=["text", "image", "audio"])  # 消息类型
     content = StringField(required=True)  # 文本内容或文件的URL
-    timestamp = DateTimeField(default=datetime.now)
-    related_story = ReferenceField(Story)
+    timestamp = DateTimeField(required=True)
+    related_photo_id = ReferenceField(Photo)
+    related_story_id = ReferenceField(Story)

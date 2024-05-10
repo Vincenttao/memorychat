@@ -3,3 +3,4 @@ mongoengine
 agentscope
 dashscope
 requests
+loguru

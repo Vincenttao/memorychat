@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>聊天 - {{ photo.title }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .chat-messages { overflow-y: scroll; height: 400px; display: flex; flex-direction: column; }
+    .message { padding: 10px; margin: 5px; border-radius: 10px; width: calc(100% - 20px); max-width: 80%; }
+    .assistant { background-color: #f0f0f0; align-self: flex-start; text-align: left; margin-right: auto; }
+    .user { background-color: #9fdf9f; align-self: flex-end; text-align: right; margin-left: auto; }
+    .sender-name { font-weight: bold; margin-bottom: 5px; }
+</style>
+
+</head>
+<body>
+<div class="top-nav">
+    <a href="#" onclick="window.history.back()">返回上一页</a>
+</div>
+
+<div class="photo-container">
+    <h3>{{ photo.title }}</h3>
+    <p>{{ photo.upload_date }}</p>
+    <img src="{{ url_for('static', filename=photo.image_url) }}" alt="Photo">
+    <p class="photo-description">{{ photo.description }}</p>
+</div>
+
+<div class="chat-container">
+    <div class="chat-messages" id="chatMessages">
+        <!-- Chat messages will be dynamically added here -->
+    </div>
+    <div class="chat-input">
+        <textarea id="messageInput" placeholder="输入文字..." oninput="adjustTextAreaHeight()"></textarea>
+        <button class="toggle-voice-btn" onclick="toggleVoiceInput()">切换到语音</button>
+        <button onclick="sendMessage()">发送</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        loadMessages();  // 当页面加载完成时，加载消息
+    });
+
+    function loadMessages() {
+        fetch('/api/get_photo_message?related_photo_id={{ photo.id }}')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                const chatMessages = document.getElementById('chatMessages');
+                chatMessages.innerHTML = '';
+
+                // 按 timestamp 字段对消息进行升序排序
+                data.messages.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+
+                data.messages.forEach(message => {
+                    const messageContainer = document.createElement('div');
+                    messageContainer.classList.add('message', message.sender === 'assistant' ? 'assistant' : 'user');
+
+                    // 添加发送者姓名
+                    const senderName = document.createElement('div');
+                    senderName.classList.add('sender-name');
+                    senderName.textContent = message.sender === 'assistant' ? '爱乐为' : '我';
+                    messageContainer.appendChild(senderName);
+
+                    // 添加消息内容
+                    const messageContent = document.createElement('div');
+                    messageContent.textContent = message.content;
+                    messageContainer.appendChild(messageContent);
+
+                    chatMessages.appendChild(messageContainer);
+                });
+                // 滚动到聊天框的底部
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } else {
+                console.error('Failed to load messages:', data.message);
+            }
+        })
+        .catch(error => console.error('Error loading messages:', error));
+    }
+
+
+
+    function toggleVoiceInput() {
+        alert('切换到语音输入');
+    }
+
+    function adjustTextAreaHeight() {
+        const input = document.getElementById('messageInput');
+        input.style.height = 'auto';
+        input.style.height = input.scrollHeight + 'px';
+    }
+
+    function sendMessage() {
+        const messageContent = document.getElementById('messageInput').value;
+        if (!messageContent.trim()) {
+            alert('消息不能为空！');
+            return;
+        }
+
+        const postData = {
+            sender: 'user',
+            content_type: 'text',
+            content: messageContent,
+            related_photo: '{{ photo.id }}'
+        };
+
+        fetch('/api/send_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(postData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response:', data);
+            if (data.status === 'success') {
+                document.getElementById('messageInput').value = '';
+                adjustTextAreaHeight();  // Adjust height after clearing
+                alert('消息发送成功！');
+                loadMessages();  // 消息发送成功后，重新加载消息
+            } else {
+                alert('消息发送失败：' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error sending message:', error);
+            alert('发送消息时发生错误。');
+        });
+    }
+</script>
+
+</body>
+</html>

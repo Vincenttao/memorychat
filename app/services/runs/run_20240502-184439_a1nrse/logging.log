@@ -1,9 +1,0 @@
-2024-05-02 18:44:42.162 | INFO     | agentscope.models:read_model_configs:170 - Load configs for model wrapper: qwen-max, qwen-turbo
-2024-05-02 18:44:42.183 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
-2024-05-02 18:44:42.183 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
-2024-05-02 18:44:42.184 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs\run_20240502-184439_a1nrse\agentscope.db]
-2024-05-02 18:44:42.193 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [qwen-turbo]
-2024-05-02 18:44:42.196 | INFO     | agentscope.utils.monitor:register:417 - Register metric [qwen-turbo.call_counter] to SqliteMonitor with unit [times] and quota [None]
-2024-05-02 18:44:42.203 | INFO     | agentscope.utils.monitor:register:417 - Register metric [qwen-turbo.prompt_tokens] to SqliteMonitor with unit [token] and quota [None]
-2024-05-02 18:44:42.212 | INFO     | agentscope.utils.monitor:register:417 - Register metric [qwen-turbo.completion_tokens] to SqliteMonitor with unit [token] and quota [None]
-2024-05-02 18:44:42.219 | INFO     | agentscope.utils.monitor:register:417 - Register metric [qwen-turbo.total_tokens] to SqliteMonitor with unit [token] and quota [None]

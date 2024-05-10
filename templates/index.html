@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的Story列表</title>
+    <title>我的照片列表</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>我的Story列表</h1>
-        {% for story in stories %}
-        <div class="story">
-            <h2>{{ story.title }}</h2>
-            <div class="story-images">
-                {% for image in story.images %}
-                <img src="{{ image }}" alt="Story Image">
-                {% endfor %}
-                {% if story.images|length < 9 %}
-                <div class="upload-icon">
-                    <img src="/static/upload-icon.png" alt="Upload Icon" onclick="alert('上传功能未实现');">
-                </div>
-                {% endif %}
-            </div>
-            <p>{{ story.summary }}</p>
-            <p class="date">{{ story.date }}</p>
-            <div class="buttons">
-                <button onclick="alert('继续聊天功能未实现');">继续聊天</button>
-                <button onclick="alert('查看详情功能未实现');">查看</button>
-            </div>
+        <h1>我的照片列表</h1>
+        <div id="photo-list">
+            <!-- 初始照片列表由服务端渲染填充 -->
         </div>
-        {% endfor %}
-        <button class="new-story" onclick="alert('创建新Story功能未实现');">创建新Story</button>
+        <button id="load-more" onclick="loadMorePhotos()">加载更多</button>
+        <p id="message"></p>
     </div>
+
+    <script>
+        let currentPage = 1; // 初始化当前页码为1
+        function loadMorePhotos() {
+            currentPage++; // 每次请求前递增页码
+            fetch(`/load_photos?page=${currentPage}`) // 发起到后端的异步请求
+                .then(response => response.json())
+                .then(data => {
+                    if (data.photos.length === 0) {
+                        document.getElementById('message').textContent = '没有更多照片了'; // 当没有更多数据时显示消息
+                        document.getElementById('load-more').style.display = 'none'; // 并隐藏加载更多按钮
+                        return;
+                    }
+                    data.photos.forEach(photo => {
+                        const photoEntry = document.createElement('div'); // 为每张照片创建一个新的 div 元素
+                        photoEntry.className = 'photo-entry';
+                        photoEntry.innerHTML = `
+                            <h2>${photo.title} [${photo.upload_date}]</h2>
+                            <img src="${photo.image_url}" alt="Photo Image">
+                            <p class="summary">${photo.description}</p>
+                        `;
+                        document.getElementById('photo-list').appendChild(photoEntry); // 将新的照片元素加入列表
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading photos:', error);
+                    document.getElementById('message').textContent = '加载照片时发生错误'; // 异常处理
+                });
+        }
+
+        // 初始加载第一页照片
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMorePhotos(); // 页面加载完成后自动加载第一页照片
+        });
+    </script>
 </body>
 </html>

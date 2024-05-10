@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>我的照片</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="top-nav">
+    <a href="/photos">回到首页</a>
+    <a href="/upload" class="upload-btn">添加新照片</a>
+</div>
+<div id="photos">
+    {% for photo in photos %}
+    <div class="photo-item">
+        <h3>{{ photo.title }}</h3>
+        <p>{{ photo.upload_date }}</p>
+        <img src="{{ photo.image_url }}" alt="Photo" style="width: 100%;">
+        <p>{{ photo.description }}</p>
+        <button onclick="location.href='/chat/photo/{{ photo.id }}'">继续聊天</button>
+    </div>
+    {% endfor %}
+</div>
+<button onclick="window.location.href='{{ url_for('get_photos', user_id=user_id, page=next_page) }}'">
+    查看更多
+</button>
+<script>
+    if ({{ photos|length }} < 5) {
+        document.querySelector('button').innerText = '没有更多照片了';
+        document.querySelector('button').disabled = true;
+    }
+</script>
+</body>
+</html>
