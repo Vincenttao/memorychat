@@ -5,7 +5,7 @@ from loguru import logger
 
 from app.services.prompt import PromptBuilder
 from app.services.llm_models import QwenModel
-
+from instance.config import DAsh
 
 
 class Agent:
@@ -82,4 +82,3 @@ class Agent:
         response = self.llm_model.call_model(system_prompt, user_input)
 
         return response
-
