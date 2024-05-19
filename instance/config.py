@@ -1,4 +1,3 @@
-DASHSCOPE_API_KEY = "sk-0e7eecd2eff34bf3bf501ff3fbc26913"
 
 COUNT_NUM = 5  # 多少轮对话后刷新照片描述
 
