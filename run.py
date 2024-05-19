@@ -9,8 +9,8 @@ from instance.config import DevelopmentConfig
 from instance.config import TestingConfig
 from app.api import api_blueprint
 from loguru import logger
-logger.add(sys.stdout, level="DEBUG")
 
+logger.add(sys.stdout, level="DEBUG")
 
 TEST_USER_ID = '001'
 
@@ -21,7 +21,6 @@ connect(host=app.config['MONGO_URI'])
 app.register_blueprint(api_blueprint, url_prefix='/api')
 
 
-@app.route('/')
 @app.route('/<int:page>')
 def index(page=1):
     photo_manager = PhotoManagement(User, Photo)
@@ -34,6 +33,7 @@ def index(page=1):
     return render_template('index.html', photos=photos, page=page)
 
 
+@app.route('/', methods=['GET'])
 @app.route('/photos', methods=['GET'])
 def get_photos():
     user_id = TEST_USER_ID
@@ -49,7 +49,7 @@ def get_photos():
         'id': str(photo.id),
         'title': photo.title or "暂无主题",
         'upload_date': photo.upload_date.strftime('%Y-%m-%d %H:%M:%S'),
-        'image_url': url_for('static', filename=photo.image_url),
+        'image_url': photo.image_url,
         'description': photo.description or "没有对照片的描述"
     } for idx, photo in enumerate(photos)]
 
@@ -71,6 +71,11 @@ def chat_about_photo(photo_id):
     # 如果距离上次聊天超过1天，则开始新话题
 
     return render_template('chat_about_photo.html', photo=photo)
+
+
+@app.route('/upload_photo')
+def upload_photo_page():
+    return render_template('upload_photo.html')
 
 
 if __name__ == "__main__":

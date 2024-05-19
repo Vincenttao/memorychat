@@ -2,6 +2,7 @@ from datetime import datetime
 
 from mongoengine import Document, StringField, ReferenceField, DateTimeField, ListField, DictField, IntField
 
+from instance.config import COUNT_NUM
 
 class User(Document):
     user_id = StringField(primary_key=True)
@@ -17,7 +18,7 @@ class Photo(Document):
     upload_date = DateTimeField(default=datetime.now)
     description = StringField()
     title = StringField()
-    count_down = IntField(default=5)
+    count_down = IntField(default=COUNT_NUM)
 
 
 class Story(Document):

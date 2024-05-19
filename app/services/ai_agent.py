@@ -1,23 +1,15 @@
-from agentscope.agents import DialogAgent, DictDialogAgent
-
 from app.services.system_prompt import *
 
-from instance.config import llm_model_configs, DASHSCOPE_API_KEY
+from instance.config import DASHSCOPE_API_KEY
 import dashscope
-import json
 import requests
 from loguru import logger
 from dashscope.audio.asr import Transcription
 
 from app.services.prompt import PromptBuilder
 from app.services.llm_models import QwenModel
-from app.services.utils import MessageService
-
-# agentscope.init(model_configs=llm_model_configs)
-
 
 dashscope.api_key = DASHSCOPE_API_KEY
-
 
 
 class Agent:

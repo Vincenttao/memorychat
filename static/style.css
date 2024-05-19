@@ -6,7 +6,7 @@ body {
     background: #f0f2f5;
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Ensure the full height of the window is used */
+    align-items: center;
 }
 
 /* Top navigation styles */
@@ -17,6 +17,7 @@ body {
     padding: 10px;
     background-color: #ffffff;
     border-bottom: 1px solid #ccc;
+    width: 100%;
 }
 
 .top-nav a {
@@ -25,12 +26,35 @@ body {
     font-size: 16px;
 }
 
+/* Upload button styles */
+.upload-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
 /* Photo container styles */
-.photo-container {
+#photos {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.photo-item {
     background: #fff;
-    padding: 10px;
-    margin-top: 5px;
-    border-bottom: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
 }
 
 .photo-header {
@@ -39,33 +63,41 @@ body {
     align-items: center;
 }
 
-.photo-header h3,
-.photo-header p {
+.photo-header h3, .photo-header p {
     margin: 0;
 }
 
-.photo-content {
-    display: flex;
-    margin-top: 10px;
-}
-
 .photo-content img {
-    width: auto;
-    max-height: 33vh;
-    margin-right: 20px;
-}
-
-.photo-description-container {
-    flex: 1;
-    overflow-y: auto;
-    max-height: 33vh; /* Same as the max height of the image */
+    width: 100%;
+    max-height: 50vh; /* 图片高度设置为屏幕高度的二分之一 */
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 10px 0;
 }
 
 .photo-description {
+    margin: 10px 0;
     color: #666;
-    padding: 5px;
-    font-size: 14px;
-    text-align: left;
+}
+
+/* Continue chat button styles */
+.continue-chat-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.continue-chat-btn button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.continue-chat-btn button:hover {
+    background-color: #45a049;
 }
 
 /* Chat container styles */

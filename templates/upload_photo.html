@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传照片</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .upload-container {
+            background: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .upload-container h2 {
+            margin-top: 0;
+            color: #1a73e8;
+        }
+        .upload-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .upload-container input[type="text"],
+        .upload-container textarea,
+        .upload-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .upload-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .upload-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="#" onclick="window.history.back()">返回上一页</a>
+    </div>
+    <div class="upload-container">
+        <h2>上传照片</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="title">照片标题 (必填)</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">照片描述 (选填)</label>
+            <textarea id="description" name="description" rows="4"></textarea>
+
+            <label for="photo">选择照片 (仅支持 JPG)</label>
+            <input type="file" id="photo" name="photo" accept="image/jpeg" required>
+
+            <button type="submit">上传</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            fetch('/api/upload_photo', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('照片上传成功！');
+                    window.location.href = '/photos';
+                } else {
+                    alert('照片上传失败：' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('上传过程中发生错误。');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,0 @@
-2024-05-11 18:31:40.316 | INFO     | agentscope.models:read_model_configs:170 - Load configs for model wrapper: qwen-max, qwen-turbo
-2024-05-11 18:31:40.329 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
-2024-05-11 18:31:40.329 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
-2024-05-11 18:31:40.330 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs\run_20240511-183136_qgese2\agentscope.db]

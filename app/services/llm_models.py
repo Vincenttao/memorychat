@@ -1,5 +1,3 @@
-import pprint
-
 import requests
 from loguru import logger
 

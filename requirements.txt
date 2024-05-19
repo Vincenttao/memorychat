@@ -1,6 +1,4 @@
 flask
 mongoengine
-agentscope
-dashscope
 requests
 loguru

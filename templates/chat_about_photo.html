@@ -25,7 +25,7 @@
         <p>{{ photo.upload_date.strftime('%Y-%m-%d') }}</p>
     </div>
     <div class="photo-content">
-        <img src="{{ url_for('static', filename=photo.image_url) }}" alt="Photo">
+        <img src="{{ photo.image_url }}" alt="Photo">
         <div class="photo-description-container">
             <p class="photo-description">{{ photo.description }}</p>
         </div>

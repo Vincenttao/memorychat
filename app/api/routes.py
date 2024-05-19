@@ -1,16 +1,20 @@
+import os
 import sys
+import uuid
 
 from . import api_blueprint
-from flask import request, jsonify
+from flask import request, jsonify, url_for
 from datetime import datetime
 from app.services.utils import MessageService, PhotoManagement
 from app.models.models import User, Message, Photo
 from loguru import logger
 from app.services.ai_agent import Agent
 from app.services.llm_models import QwenModel
+from werkzeug.utils import secure_filename
 
 from instance.config import DASHSCOPE_API_KEY
 from instance.config import COUNT_NUM
+from instance.config import UPLOAD_FOLDER
 
 qwen_turbo_model = QwenModel(DASHSCOPE_API_KEY, "qwen-turbo")
 qwen_max_model = QwenModel(DASHSCOPE_API_KEY, "qwen-max")
@@ -54,7 +58,6 @@ def send_message():
                                           related_photo_id=related_photo_id)
 
     photo_description = f"照片的标题是：{photo.title}；照片的描述是：{photo.description}。"
-
 
     assistant_message = qwen_turbo_agent.photo_message_conversation(photo_description=photo_description,
                                                                     messages_list=messages_list,
@@ -152,9 +155,51 @@ def get_photo_message():
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
 
-@api_blueprint.route('/upload_photo', methods=['post'])
+@api_blueprint.route('/upload_photo', methods=['POST'])
 def upload_photo():
-    pass
+    logger.info(f"upload init")
+    try:
+        user_id = request.form.get('user_id', TEST_USER_ID)
+        title = request.form.get('title')
+        description = request.form.get('description', '')
+        photo = request.files.get('photo')
+
+        if not all([user_id, title, photo]):
+            return jsonify({'status': 'error', 'message': '缺少必要参数'}), 400
+
+        filename = secure_filename(photo.filename)
+        unique_filename = f"{uuid.uuid4().hex}_{filename}"
+
+        date_folder = datetime.now().strftime('%Y-%m-%d')
+        upload_folder = os.path.join(UPLOAD_FOLDER, date_folder)
+
+        logger.info(f"makedir {upload_folder}")
+        os.makedirs(upload_folder, exist_ok=True)
+
+        file_path = os.path.join(upload_folder, unique_filename)
+        photo.save(file_path)
+
+        image_url = url_for('static', filename=f'upload_img/{date_folder}/{unique_filename}')
+
+        logger.info(f"url: {image_url}")
+
+        photo_record = Photo(
+            user_id=user_id,
+            image_url=image_url,
+            title=title,
+            description=description
+        )
+        photo_record.save()
+
+        return jsonify({'status': 'success', 'message': '照片上传成功'})
+
+    except Exception as e:
+        logger.error(f"Error uploading photo: {e}")
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'jpg', 'jpeg'}
 
 
 @api_blueprint.route('/upload_audio', methods=['post'])
