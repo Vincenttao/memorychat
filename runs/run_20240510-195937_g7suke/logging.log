@@ -1,0 +1,19 @@
+2024-05-10 19:59:39.689 | INFO     | agentscope.models:read_model_configs:170 - Load configs for model wrapper: qwen-max, qwen-turbo
+2024-05-10 19:59:39.698 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
+2024-05-10 19:59:39.699 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
+2024-05-10 19:59:39.699 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs\run_20240510-195937_g7suke\agentscope.db]
+2024-05-10 19:59:48.450 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'related_photo_id': '66361994e8eb220e315529d7'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 19, 59, 48, 450288)}))
+2024-05-10 19:59:48.457 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[]
+2024-05-10 19:59:48.463 | INFO     | app.api.routes:get_photo_message:82 - messages not found
+2024-05-10 19:59:48.468 | INFO     | app.services.ai_agent:photo_message_init:58 - prompt is:{'messages': [{'role': 'system', 'content': '\n你是一位心理疗愈师，你的任务是通过对照片的讨论，帮助用户回忆他们经历过的历史事件。照片的详细信息会在稍后提到。\n你需要引导用户深入地回忆这个照片背后的故事，包括照片中的人物、地点、时间、感受以及和照片相关的印象深刻的事情，例如可能是一次旅游，可能是一次聚会。\n在这个过程中，可以适当地重复照片相关信息，以便帮助用户更好地回忆。\n你的目标是通过这种深度对话，帮助用户提升他们的认知水平。\n请注意，你需要尊重用户的感受，避免触及他们可能不愿意谈论的敏感话题。同时，你也需要保持专业，避免给出任何可能被误解为医疗建议的信息。\n在这个过程中，请表现的更加亲切和理解对方，以便让用户更容易打开心扉。\n\n下面是我们目前已知的和照片相关的信息，可能过于简略，如果缺少信息，请主动向用户提问。但注意一次只提一个问题。下面是照片的信息：照片的标题是：北京天坛；照片的描述是：A test photo。'}, {'role': 'user', 'content': '请以"让我们开启这张照片的回忆吧"开头，开始提问'}]}
+2024-05-10 19:59:55.106 | INFO     | app.api.routes:get_photo_message:93 - message added:fMessage object
+2024-05-10 19:59:55.108 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'related_photo_id': '66361994e8eb220e315529d7'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 19, 59, 55, 108017)}))
+2024-05-10 19:59:55.110 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[<Message: Message object>]
+2024-05-10 19:59:55.110 | INFO     | app.api.routes:get_photo_message:97 - retrieved message:[<Message: Message object>]
+2024-05-10 19:59:55.112 | INFO     | app.api.routes:get_photo_message:106 - message list:[{'sender': 'assistant', 'message_type': 'text', 'content': '让我们开启这张照片的回忆吧。这张照片的标题是北京天坛，您看到这张照片时，首先浮现在脑海里的是什么场景呢？', 'timestamp': '2024-05-10 19:59:55', 'related_photo_id': '66361994e8eb220e315529d7'}]
+2024-05-10 19:59:55.112 | INFO     | app.api.routes:get_photo_message:107 - message json:<Response 489 bytes [200 OK]>
+2024-05-10 20:03:44.301 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'related_photo_id': '66361994e8eb220e315529d7'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 20, 3, 44, 301059)}))
+2024-05-10 20:03:44.303 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[<Message: Message object>]
+2024-05-10 20:03:44.306 | INFO     | app.api.routes:get_photo_message:97 - retrieved message:[<Message: Message object>]
+2024-05-10 20:03:44.308 | INFO     | app.api.routes:get_photo_message:106 - message list:[{'sender': 'assistant', 'message_type': 'text', 'content': '让我们开启这张照片的回忆吧。这张照片的标题是北京天坛，您看到这张照片时，首先浮现在脑海里的是什么场景呢？', 'timestamp': '2024-05-10 19:59:55', 'related_photo_id': '66361994e8eb220e315529d7'}]
+2024-05-10 20:03:44.309 | INFO     | app.api.routes:get_photo_message:107 - message json:<Response 489 bytes [200 OK]>

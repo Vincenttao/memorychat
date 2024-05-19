@@ -1,5 +1,8 @@
 DASHSCOPE_API_KEY = "sk-0e7eecd2eff34bf3bf501ff3fbc26913"
 
+COUNT_NUM = 5  # 多少轮对话后刷新照片描述
+
+
 class Config:
     SERVER_NAME = '127.0.0.1:5000'
     MONGO_URI = "mongodb://localhost:27017/memorychatbase"
@@ -33,4 +36,3 @@ llm_model_configs = [
         "api_key": DASHSCOPE_API_KEY
     }
 ]
-

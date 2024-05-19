@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,6 +9,7 @@ body {
     height: 100vh; /* Ensure the full height of the window is used */
 }
 
+/* Top navigation styles */
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -23,80 +25,40 @@ body {
     font-size: 16px;
 }
 
-.upload-btn {
-    background: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-#photos {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.photo-item {
-    background: white;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 15px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.photo-item h3, .photo-item p {
-    margin: 5px 0;
-}
-
-.photo-item img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:disabled {
-    background-color: #ccc;
-}
-
+/* Photo container styles */
 .photo-container {
     background: #fff;
-    text-align: center;
     padding: 10px;
     margin-top: 5px;
     border-bottom: 1px solid #ccc;
 }
 
-.photo-container img {
-    width: auto;
-    max-height: 33vh;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.photo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.photo-container h3,
-.photo-container p {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.photo-header h3,
+.photo-header p {
+    margin: 0;
+}
+
+.photo-content {
+    display: flex;
+    margin-top: 10px;
+}
+
+.photo-content img {
+    width: auto;
+    max-height: 33vh;
+    margin-right: 20px;
+}
+
+.photo-description-container {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 33vh; /* Same as the max height of the image */
 }
 
 .photo-description {
@@ -106,6 +68,7 @@ button:disabled {
     text-align: left;
 }
 
+/* Chat container styles */
 .chat-container {
     flex-grow: 1;
     display: flex;
@@ -114,10 +77,37 @@ button:disabled {
 }
 
 .chat-messages {
-    flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
     padding: 10px;
-    background-color: #ebebeb;
+    margin: 5px;
+    border-radius: 10px;
+    width: calc(100% - 20px);
+    max-width: 80%;
+}
+
+.assistant {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+.user {
+    background-color: #9fdf9f;
+    align-self: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+.sender-name {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .chat-input {
@@ -139,10 +129,8 @@ button:disabled {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
-/* Specifically targeting the toggleVoiceInput button */
 .toggle-voice-btn {
     margin-right: 10px; /* Adding space between the buttons */
 }
@@ -154,27 +142,24 @@ button:disabled {
     border-radius: 4px;
     resize: none; /* Prevent resizing */
     overflow: hidden; /* Prevent scrollbar */
-    height: 40px; /* Initial height for two lines */
     font-size: 16px; /* Larger font size */
     padding: 10px; /* Comfortable padding */
     line-height: 1.5; /* Adequate line spacing */
 }
 
-.chat-input button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.chat-input button:disabled {
+button:disabled {
     background-color: #ccc;
 }
 
+/* Media queries */
 @media (max-width: 768px) {
-    .photo-container img {
+    .photo-content {
+        flex-direction: column;
+    }
+
+    .photo-content img,
+    .photo-description-container {
         max-width: 100%;
+        max-height: none;
     }
 }

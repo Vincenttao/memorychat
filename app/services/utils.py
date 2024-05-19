@@ -14,6 +14,16 @@ class MessageService:
         self.message_model = message_model
 
     def add_message(self, user_id, sender, message_type, content, related_story_id=None, related_photo_id=None):
+        """
+        添加新的消息
+        :param user_id:
+        :param sender:
+        :param message_type:
+        :param content:
+        :param related_story_id:
+        :param related_photo_id:
+        :return:
+        """
         user = self.user_model.objects(user_id=user_id).first()
         if user is None:
             raise ValueError("User does not exist")
@@ -62,11 +72,11 @@ class MessageService:
         if related_photo_id is not None:
             query &= Q(related_photo_id=related_photo_id)
         query &= Q(timestamp__gte=start_time) & Q(timestamp__lte=end_time)
-        logger.info(f"查询条件如下：{query}")
+        # logger.info(f"查询条件如下：{query}")
 
         # 查询并按时间戳排序返回消息
         messages = self.message_model.objects(query).order_by('-timestamp').limit(limit)
-        logger.info(f"查询结果如下：{messages}")
+        # logger.info(f"查询结果如下：{messages}")
         return messages
 
 

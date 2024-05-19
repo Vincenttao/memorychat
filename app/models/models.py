@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from mongoengine import Document, StringField, ReferenceField, DateTimeField, ListField, DictField
+from mongoengine import Document, StringField, ReferenceField, DateTimeField, ListField, DictField, IntField
 
 
 class User(Document):
@@ -17,6 +17,7 @@ class Photo(Document):
     upload_date = DateTimeField(default=datetime.now)
     description = StringField()
     title = StringField()
+    count_down = IntField(default=5)
 
 
 class Story(Document):

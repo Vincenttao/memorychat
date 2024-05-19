@@ -1,6 +1,5 @@
 import sys
 
-import agentscope
 from flask import Flask, render_template, jsonify, request, url_for
 from mongoengine import connect
 
@@ -9,11 +8,9 @@ from app.services.utils import PhotoManagement
 from instance.config import DevelopmentConfig
 from instance.config import TestingConfig
 from app.api import api_blueprint
-from instance.config import llm_model_configs
 from loguru import logger
 logger.add(sys.stdout, level="DEBUG")
 
-agentscope.init(model_configs=llm_model_configs)
 
 TEST_USER_ID = '001'
 

@@ -20,10 +20,16 @@
 </div>
 
 <div class="photo-container">
-    <h3>{{ photo.title }}</h3>
-    <p>{{ photo.upload_date }}</p>
-    <img src="{{ url_for('static', filename=photo.image_url) }}" alt="Photo">
-    <p class="photo-description">{{ photo.description }}</p>
+    <div class="photo-header">
+        <h3>{{ photo.title }}</h3>
+        <p>{{ photo.upload_date.strftime('%Y-%m-%d') }}</p>
+    </div>
+    <div class="photo-content">
+        <img src="{{ url_for('static', filename=photo.image_url) }}" alt="Photo">
+        <div class="photo-description-container">
+            <p class="photo-description">{{ photo.description }}</p>
+        </div>
+    </div>
 </div>
 
 <div class="chat-container">
@@ -102,10 +108,10 @@
             sender: 'user',
             content_type: 'text',
             content: messageContent,
-            related_photo: '{{ photo.id }}'
+            related_photo_id: '{{ photo.id }}'
         };
 
-        fetch('/api/send_message', {
+        fetch('/api/send_photo_message', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -118,7 +124,6 @@
             if (data.status === 'success') {
                 document.getElementById('messageInput').value = '';
                 adjustTextAreaHeight();  // Adjust height after clearing
-                alert('消息发送成功！');
                 loadMessages();  // 消息发送成功后，重新加载消息
             } else {
                 alert('消息发送失败：' + data.message);

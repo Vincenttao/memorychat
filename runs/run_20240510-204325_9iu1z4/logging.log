@@ -1,0 +1,20 @@
+2024-05-10 20:43:28.235 | INFO     | agentscope.models:read_model_configs:170 - Load configs for model wrapper: qwen-max, qwen-turbo
+2024-05-10 20:43:28.248 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
+2024-05-10 20:43:28.249 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
+2024-05-10 20:43:28.249 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs\run_20240510-204325_9iu1z4\agentscope.db]
+2024-05-10 20:45:09.327 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'related_photo_id': '66361994e8eb220e315529d7'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 20, 45, 9, 327019)}))
+2024-05-10 20:45:09.330 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[<Message: Message object>]
+2024-05-10 20:45:09.333 | INFO     | app.api.routes:get_photo_message:117 - retrieved message:[<Message: Message object>]
+2024-05-10 20:45:09.336 | INFO     | app.api.routes:get_photo_message:126 - message list:[{'sender': 'assistant', 'message_type': 'text', 'content': '让我们开启这张照片的回忆吧。这张照片的标题是北京天坛，您看到这张照片时，首先浮现在脑海里的是什么场景呢？', 'timestamp': '2024-05-10 19:59:55', 'related_photo_id': '66361994e8eb220e315529d7'}]
+2024-05-10 20:45:09.337 | INFO     | app.api.routes:get_photo_message:127 - message json:<Response 489 bytes [200 OK]>
+2024-05-10 20:46:00.760 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'related_photo_id': '66361994e8eb220e315529d7'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 20, 46, 0, 760575)}))
+2024-05-10 20:46:00.763 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[<Message: Message object>]
+2024-05-10 20:46:00.766 | INFO     | app.api.routes:get_photo_message:117 - retrieved message:[<Message: Message object>]
+2024-05-10 20:46:00.770 | INFO     | app.api.routes:get_photo_message:126 - message list:[{'sender': 'assistant', 'message_type': 'text', 'content': '让我们开启这张照片的回忆吧。这张照片的标题是北京天坛，您看到这张照片时，首先浮现在脑海里的是什么场景呢？', 'timestamp': '2024-05-10 19:59:55', 'related_photo_id': '66361994e8eb220e315529d7'}]
+2024-05-10 20:46:00.771 | INFO     | app.api.routes:get_photo_message:127 - message json:<Response 489 bytes [200 OK]>
+2024-05-10 20:46:16.947 | INFO     | app.api.routes:send_message:46 - message added:fMessage object
+2024-05-10 20:46:16.948 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 20, 46, 16, 948179)}))
+2024-05-10 20:46:16.950 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[<Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>]
+2024-05-10 20:48:30.837 | INFO     | app.api.routes:send_message:46 - message added:fMessage object
+2024-05-10 20:48:30.840 | INFO     | app.services.utils:retrieve_photo_message:75 - 查询条件如下：(Q(**{'user_id': '001'}) & Q(**{'timestamp__gte': datetime.datetime(1, 1, 1, 0, 0)}) & Q(**{'timestamp__lte': datetime.datetime(2024, 5, 10, 20, 48, 30, 840198)}))
+2024-05-10 20:48:30.844 | INFO     | app.services.utils:retrieve_photo_message:79 - 查询结果如下：[<Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>, <Message: Message object>]

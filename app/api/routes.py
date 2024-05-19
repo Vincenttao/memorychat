@@ -3,21 +3,20 @@ import sys
 from . import api_blueprint
 from flask import request, jsonify
 from datetime import datetime
-from app.services.utils import MessageService
+from app.services.utils import MessageService, PhotoManagement
 from app.models.models import User, Message, Photo
 from loguru import logger
 from app.services.ai_agent import Agent
 from app.services.llm_models import QwenModel
-from app.services.prompt import PromptBuilder
-from instance.config import DASHSCOPE_API_KEY
-from app.services.system_prompt import *
 
-qwen_turbo_model = QwenModel(DASHSCOPE_API_KEY,"qwen-turbo")
-qwen_max_model = QwenModel(DASHSCOPE_API_KEY,"qwen-max")
+from instance.config import DASHSCOPE_API_KEY
+from instance.config import COUNT_NUM
+
+qwen_turbo_model = QwenModel(DASHSCOPE_API_KEY, "qwen-turbo")
+qwen_max_model = QwenModel(DASHSCOPE_API_KEY, "qwen-max")
 
 qwen_turbo_agent = Agent(qwen_turbo_model)
 qwen_max_agent = Agent(qwen_max_model)
-
 
 logger.add(sys.stdout, level="DEBUG")
 
@@ -26,38 +25,74 @@ TEST_USER_ID = '001'
 
 @api_blueprint.route('/send_photo_message', methods=['post'])
 def send_message():
-    try:
-        content = request.json
-        user_id = content.get('user_id', TEST_USER_ID)
-        sender = content.get('sender', 'user')
-        message_type = content.get('content_type', 'text')
-        message_content = content.get('content', '')
-        related_photo_id = content.get('related_photo_id', None)
+    content = request.json
+    user_id = content.get('user_id', TEST_USER_ID)
+    sender = content.get('sender', 'user')
+    message_type = content.get('content_type', 'text')
+    message_content = content.get('content', '')
+    related_photo_id = content.get('related_photo_id', None)
 
-        message_manager = MessageService(User, Message)
+    message_manager = MessageService(User, Message)
 
-        # 读取最新一条的assistant记录，
-        # 如果记录不存在，则启动init流程
-        # 如果记录存在，但已经超过
+    photo = Photo.objects(id=related_photo_id).first()
 
-        message = message_manager.add_message(user_id=user_id,
-                                              sender=sender,
-                                              message_type=message_type,
-                                              content=message_content,
-                                              related_photo_id=related_photo_id)
+    messages = message_manager.retrieve_photo_message(user_id=user_id,
+                                                      related_photo_id=related_photo_id)
 
-        logger.info(f"message added:f{message}")
+    messages_list = [{
+        'sender': message.sender,
+        'message_type': message.message_type,
+        'content': message.content,
+        'timestamp': message.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+        'related_photo_id': str(message.related_photo_id.id) if message.related_photo_id else None
+    } for message in reversed(messages)]
+
+    message = message_manager.add_message(user_id=user_id,
+                                          sender=sender,
+                                          message_type=message_type,
+                                          content=message_content,
+                                          related_photo_id=related_photo_id)
+
+    photo_description = f"照片的标题是：{photo.title}；照片的描述是：{photo.description}。"
 
 
+    assistant_message = qwen_turbo_agent.photo_message_conversation(photo_description=photo_description,
+                                                                    messages_list=messages_list,
+                                                                    user_input=message_content)
 
-        response = {'status': 'success', 'message': 'Your message was received and saved.'}
-        return jsonify(response), 200
-    except ValueError as e:
-        return jsonify({'status': 'error', 'message': str(e)}), 400
-    except Exception as e:
-        # 捕获任何其他可能的异常并返回错误信息
-        return jsonify({'status': 'error', 'message': str(e)}), 500
+    message_save = message_manager.add_message(user_id=user_id,
+                                               sender='assistant',
+                                               message_type='text',
+                                               content=assistant_message,
+                                               related_photo_id=related_photo_id)
 
+    response = {'status': 'success', 'message': 'Your message was received and saved.'}
+
+    # 下面是计算是否已经回答了足够长，如果回答了足够多的轮次，将之前轮次的信息整合进入照片描述中
+    if photo.count_down <= 1:
+        messages = message_manager.retrieve_photo_message(user_id=user_id,
+                                                          related_photo_id=related_photo_id)
+        messages_list = [{
+            'sender': message.sender,
+            'message_type': message.message_type,
+            'content': message.content,
+            'timestamp': message.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+            'related_photo_id': str(message.related_photo_id.id) if message.related_photo_id else None
+        } for message in messages]
+
+        photo_summarization = qwen_max_agent.photo_message_summary(
+            photo_description=photo_description,
+            messages_list=messages_list)
+
+        photo.description = photo_summarization
+        photo.count_down = COUNT_NUM
+        photo.save()
+
+    else:
+        photo.count_down -= 1
+        photo.save()
+
+    return jsonify(response), 200
 
 
 @api_blueprint.route('/get_photo_message', methods=['get'])
@@ -85,9 +120,17 @@ def get_photo_message():
         if not messages:
             logger.info("messages not found")
             photo = Photo.objects(id=related_photo_id, user_id=user_id).first()
-            sys_prompt = recall_memory_sys_prompt + photo_pre_description_prompt + photo.title + photo.description
+            photo_description = f"照片的标题是：{photo.title}；照片的描述是：{photo.description}。"
+            init_message = qwen_max_agent.photo_message_init(photo_description)
+            response = message_service.add_message(
+                user_id=user_id,
+                sender="assistant",
+                message_type="text",
+                content=init_message,
+                related_photo_id=related_photo_id)
 
-        logger.info(f"retrieved message:{messages}")
+            messages = message_service.retrieve_photo_message(user_id, related_photo_id, start_time, end_time)
+
         # 将消息对象转换为JSON格式的列表
         messages_list = [{
             'sender': message.sender,
@@ -96,9 +139,10 @@ def get_photo_message():
             'timestamp': message.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
             'related_photo_id': str(message.related_photo_id.id) if message.related_photo_id else None
         } for message in messages]
-        logger.info(f"message list:{messages_list}")
-        logger.info(f"message json:{jsonify(messages_list)}")
+        # logger.info(f"message list:{messages_list}")
+        # logger.info(f"message json:{jsonify(messages_list)}")
         return jsonify({'status': 'success', 'messages': messages_list}), 200
+
     except ValueError as e:
         logger.error(f"value error:{e}")
         return jsonify({'status': 'error', 'message': str(e)}), 400
