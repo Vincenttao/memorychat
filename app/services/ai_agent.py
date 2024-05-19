@@ -1,15 +1,11 @@
 from app.services.system_prompt import *
 
-from instance.config import DASHSCOPE_API_KEY
-import dashscope
 import requests
 from loguru import logger
-from dashscope.audio.asr import Transcription
 
 from app.services.prompt import PromptBuilder
 from app.services.llm_models import QwenModel
 
-dashscope.api_key = DASHSCOPE_API_KEY
 
 
 class Agent:
@@ -87,20 +83,3 @@ class Agent:
 
         return response
 
-
-def speech_to_text(file_urls, model='paraformer-v1'):
-    # 发起语音识别任务
-    task_response = Transcription.async_call(model=model, file_urls=file_urls)
-
-    # 等待语音识别任务完成
-    transcribe_response = Transcription.wait(task=task_response.output.task_id)
-
-    transcription_url = transcribe_response['output']['results'][0]['transcription_url']
-
-    response = requests.get(transcription_url)
-    transcription_data = response.json()
-    text = transcription_data['transcripts'][0]['text']
-    logger.info("Transcribed text: %s", text)
-
-    # 返回识别结果
-    return text
