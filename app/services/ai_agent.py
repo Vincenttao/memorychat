@@ -5,7 +5,7 @@ from loguru import logger
 
 from app.services.prompt import PromptBuilder
 from app.services.llm_models import QwenModel
-from instance.config import DAsh
+from instance.config import DASHSCOPE_API_KEY
 
 
 class Agent:

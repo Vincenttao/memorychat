@@ -14,7 +14,6 @@
         padding: 20px;
         max-width: 800px;
         width: 100%;
-
     }
 
     .photo-header {
@@ -85,14 +84,19 @@
     </div>
     {% endfor %}
 </div>
-<button onclick="window.location.href='{{ url_for('get_photos', user_id=user_id, page=next_page) }}'">
+<button id="load-more-btn" onclick="window.location.href='{{ url_for('get_photos', user_id=user_id, page=next_page) }}'">
     查看更多
 </button>
 <script>
-    if ({{ photos|length }} < 5) {
-        document.querySelector('button').innerText = '没有更多照片了';
-        document.querySelector('button').disabled = true;
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const photosLength = {{ photos|length }};
+        const loadMoreBtn = document.getElementById('load-more-btn');
+
+        if (photosLength < 5) {
+            loadMoreBtn.innerText = '没有更多照片了';
+            loadMoreBtn.disabled = true;
+        }
+    });
 </script>
 </body>
 </html>

@@ -4,6 +4,7 @@ from mongoengine import Document, StringField, ReferenceField, DateTimeField, Li
 
 from instance.config import COUNT_NUM
 
+
 class User(Document):
     user_id = StringField(primary_key=True)
     username = StringField(required=True, unique=True)

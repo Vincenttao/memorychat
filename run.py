@@ -1,23 +1,36 @@
+import logging
 import sys
+import os
 
 from flask import Flask, render_template, jsonify, request, url_for
 from mongoengine import connect
+from loguru import logger
 
 from app.models.models import User, Photo
 from app.services.utils import PhotoManagement
-from instance.config import DevelopmentConfig
-from instance.config import TestingConfig
+from instance.config import DevelopmentConfig, TestingConfig
 from app.api import api_blueprint
-from loguru import logger
+
 
 logger.add(sys.stdout, level="DEBUG")
 
 TEST_USER_ID = '001'
 
 app = Flask(__name__)
-app.config.from_object(TestingConfig)
-connect(host=app.config['MONGO_URI'])
 
+# Detect the FLASK_ENV environment variable and set the configuration accordingly
+env = os.getenv('FLASK_ENV', 'development').lower()
+if env == 'testing':
+    app.config.from_object(TestingConfig)
+    logger.info("env is testing")
+elif env == 'development':
+    app.config.from_object(DevelopmentConfig)
+    logger.info("env is development")
+else:
+    raise EnvironmentError("Unsupported FLASK_ENV value")
+
+
+connect(host=app.config['MONGO_URI'])
 app.register_blueprint(api_blueprint, url_prefix='/api')
 
 
@@ -79,4 +92,4 @@ def upload_photo_page():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

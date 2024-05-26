@@ -5,130 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d834dee-5e8c-4fa7-9dcb-2149c852b7df" name="更改" comment="FIRST COMMIT">
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-184629_ot0occ/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-184629_ot0occ/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-184629_ot0occ/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-184629_ot0occ/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-184629_ot0occ/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-184629_ot0occ/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185042_51x6ay/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185042_51x6ay/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185042_51x6ay/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185042_51x6ay/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185042_51x6ay/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185042_51x6ay/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185116_pwcrrv/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185116_pwcrrv/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185116_pwcrrv/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185116_pwcrrv/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185116_pwcrrv/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185116_pwcrrv/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185214_osmwbh/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185214_osmwbh/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185214_osmwbh/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185214_osmwbh/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185214_osmwbh/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-185214_osmwbh/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190324_u1qeqf/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190324_u1qeqf/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190324_u1qeqf/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190324_u1qeqf/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190324_u1qeqf/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190324_u1qeqf/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190406_r9j1mv/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190406_r9j1mv/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190406_r9j1mv/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190406_r9j1mv/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190406_r9j1mv/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-190406_r9j1mv/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191009_88ejvi/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191009_88ejvi/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191009_88ejvi/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191009_88ejvi/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191009_88ejvi/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191009_88ejvi/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191402_1p7eop/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191402_1p7eop/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191402_1p7eop/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191402_1p7eop/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191402_1p7eop/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-191402_1p7eop/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-193727_whlvh8/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-193727_whlvh8/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-193727_whlvh8/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-193727_whlvh8/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-193727_whlvh8/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-193727_whlvh8/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194016_me0m6q/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194016_me0m6q/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194016_me0m6q/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194016_me0m6q/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194016_me0m6q/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194016_me0m6q/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194117_173po9/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194117_173po9/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194117_173po9/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194117_173po9/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194117_173po9/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194117_173po9/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194143_i4kaw3/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194143_i4kaw3/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194143_i4kaw3/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194143_i4kaw3/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194143_i4kaw3/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194143_i4kaw3/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194620_u3erxj/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194620_u3erxj/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194620_u3erxj/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194620_u3erxj/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194620_u3erxj/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-194620_u3erxj/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195914_l29zrl/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195914_l29zrl/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195914_l29zrl/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195914_l29zrl/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195914_l29zrl/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195914_l29zrl/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195937_g7suke/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195937_g7suke/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195937_g7suke/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195937_g7suke/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195937_g7suke/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-195937_g7suke/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-200554_n6qgu6/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-200554_n6qgu6/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-200554_n6qgu6/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-200554_n6qgu6/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-200554_n6qgu6/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-200554_n6qgu6/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204321_2rb8bq/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204321_2rb8bq/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204321_2rb8bq/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204321_2rb8bq/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204321_2rb8bq/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204321_2rb8bq/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204325_9iu1z4/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204325_9iu1z4/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204325_9iu1z4/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204325_9iu1z4/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204325_9iu1z4/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204325_9iu1z4/logging.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204959_qqxza3/.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204959_qqxza3/agentscope.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204959_qqxza3/code/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204959_qqxza3/code/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204959_qqxza3/logging.chat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/run_20240510-204959_qqxza3/logging.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/ai_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ai_agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/llm_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/llm_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/system_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/system_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chat_about_photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chat_about_photo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/instance/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/upload_photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload_photo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,34 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript 调试.photos.html.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.ai_agent.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/vincent/PycharmProjects/memorychat",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript 调试.photos.html.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ai_agent.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vincent/PycharmProjects/memorychat&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vincent\PycharmProjects\memorychat\static\upload_img" />
@@ -230,6 +112,7 @@
       <workItem from="1714632557234" duration="4226000" />
       <workItem from="1714639191861" duration="80224000" />
       <workItem from="1715250587773" duration="38558000" />
+      <workItem from="1716712773533" duration="4091000" />
     </task>
     <task id="LOCAL-00001" summary="FIRST COMMMIT">
       <option name="closed" value="true" />
@@ -286,7 +169,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/memorychat$test.coverage" NAME="test 覆盖结果" MODIFIED="1714754550742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/memorychat$ai_agent.coverage" NAME="ai_agent 覆盖结果" MODIFIED="1714646677782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/services" />
-    <SUITE FILE_PATH="coverage/memorychat$run.coverage" NAME="run 覆盖结果" MODIFIED="1715347182522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/memorychat$run.coverage" NAME="run 覆盖结果" MODIFIED="1716716877526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/memorychat$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1714645518402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
